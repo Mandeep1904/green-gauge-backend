@@ -26,7 +26,10 @@ app.get("/ping", (req, res) => {
 
 // MANUAL / CRON-LIKE TRIGGER 
 app.get("/api/cron/price-update", async (req, res) => {
+  console.log("QUERY KEY:", req.query.key);
+  console.log("ENV CRON_SECRET:", process.env.CRON_SECRET);
   if (req.query.key !== process.env.CRON_SECRET) {
+    
     return res.status(401).json({ error: "Unauthorized" });
   }
 

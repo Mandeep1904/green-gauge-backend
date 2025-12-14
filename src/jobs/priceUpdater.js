@@ -26,12 +26,23 @@ const files = [
 const MAX_RETRIES = 3;
 const RETRY_DELAY = 5000;
 
+// Anti-spam guard (6 hours)
+let lastRun = 0;
+const MIN_INTERVAL = 1000 * 60 * 60 * 6;
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // --------------------
 // MAIN UPDATER
 // --------------------
 export const updatePrices = async () => {
+  const now = Date.now();
+  if (now - lastRun < MIN_INTERVAL) {
+    console.log("|=| Skipped: updated recently |=|");
+    return;
+  }
+  lastRun = now;
+
   const browser = await chromium.launch({
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
@@ -59,25 +70,22 @@ export const updatePrices = async () => {
         try {
           const scraped = await scrapeAmazonWithPage(page, product.url);
 
-          // ALWAYS update title & image
           if (scraped.title) product.title = scraped.title;
           if (scraped.image) product.image = scraped.image;
 
-          // ALWAYS update availability
           product.available = scraped.available;
 
-          // Price: optional
           if (scraped.price !== null) {
             product.price = scraped.price;
-            console.log("|=| Price updated |=| : ", scraped.price, product.url);
+            console.log("|=| Price updated |=| :", scraped.price, product.url);
           } else {
             product.price = null;
-            console.log("|=| Price unavailable |=| : ", product.url);
+            console.log("|=| Price unavailable |=| :", product.url);
           }
 
           await sleep(3500 + Math.random() * 2000);
-        } catch (err) {
-          console.warn("|=| Failed (queued) |=| : ", product.url);
+        } catch {
+          console.warn("|=| Failed (queued) |=| :", product.url);
           retryQueue.push({ product, attempts: 1 });
         }
       }
@@ -90,36 +98,23 @@ export const updatePrices = async () => {
       const item = retryQueue.shift();
 
       if (item.attempts >= MAX_RETRIES) {
-        console.error("|=| Permanently failed |=| : ", item.product.url);
+        console.error("|=| Permanently failed |=| :", item.product.url);
         continue;
       }
 
-      console.log(
-        `|=| Retrying (${item.attempts + 1}/${MAX_RETRIES}) |=| :`,
-        item.product.url
-      );
-
       try {
         await sleep(RETRY_DELAY);
-
         const scraped = await scrapeAmazonWithPage(page, item.product.url);
 
-        // ALWAYS update title & image
         if (scraped.title) item.product.title = scraped.title;
         if (scraped.image) item.product.image = scraped.image;
 
-        // availability
         item.product.available = scraped.available;
 
-        // price optional
-        if (scraped.price !== null) {
-          item.product.price = scraped.price;
-          console.log("|=| Retry price updated |=| : ", scraped.price, item.product.url);
-        } else {
-          item.product.price = null;
-          console.log("|=| Retry price unavailable |=| : ", item.product.url);
-        }
-      } catch (err) {
+        item.product.price =
+          scraped.price !== null ? scraped.price : null;
+
+      } catch {
         item.attempts++;
         retryQueue.push(item);
       }
@@ -133,7 +128,7 @@ export const updatePrices = async () => {
 };
 
 // =========================
-// RUN ONLY IF EXECUTED DIRECTLY
+// RUN ONLY IF EXECUTED DIRECTLY (LOCAL)
 // =========================
 const isDirectRun =
   process.argv[1] &&
@@ -142,11 +137,7 @@ const isDirectRun =
 if (isDirectRun) {
   (async () => {
     console.log("|=| Price updater started |=|");
-    try {
-      await updatePrices();
-      console.log("|=| Price updater finished |=|");
-    } catch (err) {
-      console.error("|=| Fatal error |=|", err);
-    }
+    await updatePrices();
+    console.log("|=| Price updater finished |=|");
   })();
 }

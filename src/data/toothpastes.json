@@ -1,0 +1,174 @@
+{
+  "toothpastes": [
+    {
+      "id": 1,
+      "title": "Bentodent Natural Toothpaste | Herbal Whitening & Daily Oral Detox | SLS, Fluoride & Foam Free | Safe for Kids & Family | Mint & Cardamom Freshness | Remineralizing Toothpaste (Pack of 2, Qty 200g)",
+      "url": "https://amzn.in/d/gle9eV4",
+      "price": 254,
+      "image": "https://m.media-amazon.com/images/I/51R0w1hvmaL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Bentodent",
+      "description": "Bentodent Natural Toothpaste | Herbal Whitening & Daily Oral Detox | SLS, Fluoride & Foam Free | Safe for Kids & Family | Mint & Cardamom Freshness | Remineralizing Toothpaste (Pack of 2, Qty 200g)",
+      "available": true
+    },
+    {
+      "id": 2,
+      "title": "Bentodent Natural Herbal Activated Charcoal Whitening Toothpaste, Oral Care ToothPaste and Bamboo Tongue Cleaner | SLS and Fluoride Free,Safe and Certified, Pack of 100 gm",
+      "url": "https://amzn.in/d/agwu7oQ",
+      "price": 158,
+      "image": "https://m.media-amazon.com/images/I/41O-s+VUlZL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Bentodent",
+      "description": "Bentodent Natural Herbal Activated Charcoal Whitening Toothpaste, Oral Care ToothPaste and Bamboo Tongue Cleaner | SLS and Fluoride Free,Safe and Certified, Pack of 100 gm",
+      "available": true
+    },
+    {
+      "id": 3,
+      "title": "Bentodent Toothpaste - Natural Desensitizer Sensitive Toothpaste for Sensitivity Relief, Clove & Mint With Bentonite Clay & Propolis | SLS-Free, Fluoride-Free,100G",
+      "url": "https://amzn.in/d/09YFq3K",
+      "price": 154,
+      "image": "https://m.media-amazon.com/images/I/31bRZYAn87L._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Bentodent",
+      "description": "Bentodent Toothpaste - Natural Desensitizer Sensitive Toothpaste for Sensitivity Relief, Clove & Mint With Bentonite Clay & Propolis | SLS-Free, Fluoride-Free,100G",
+      "available": true
+    },
+    {
+      "id": 4,
+      "title": "BENTODENT TOOTHPASTE Natural Oral Care Toothpastes for Entire Family Incl Kids (Betel Leaf)",
+      "url": "https://amzn.in/d/dgXVm9O",
+      "price": 123,
+      "image": "https://m.media-amazon.com/images/I/71EduGixvgL._SX679_.jpg",
+      "brand": "Bentodent",
+      "description": "BENTODENT TOOTHPASTE Natural Oral Care Toothpastes for Entire Family Incl Kids (Betel Leaf)",
+      "available": true
+    },
+    {
+      "id": 5,
+      "title": "Biotique Micro Clove Action Toothpaste - For Teeth Whitening - 140gm (Pack of 2) Toothpaste (280 g, Pack of 2)",
+      "url": "https://amzn.in/d/9Z9vwZy",
+      "price": null,
+      "image": "https://m.media-amazon.com/images/I/41KBnknCltL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Biotique",
+      "description": "Biotique Micro Clove Action Toothpaste - For Teeth Whitening - 140gm (Pack of 2) Toothpaste (280 g, Pack of 2)",
+      "available": false
+    },
+    {
+      "id": 6,
+      "title": "Jagat Devsutra Dr. Trusted Ayurvedic HERBAL Activated Charcoal Toothpaste for Teeth Whitening - 100% Natural Formula with Mint Flavour, No Fluoride & Artificial Colours - Pack of 3 (125g x 3)",
+      "url": "https://amzn.in/d/2jP6d2z",
+      "price": 284,
+      "image": "https://m.media-amazon.com/images/I/41Hh86QhK1L._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Jagat Devsutra",
+      "description": "Jagat Devsutra Dr. Trusted Ayurvedic HERBAL Activated Charcoal Toothpaste for Teeth Whitening - 100% Natural Formula with Mint Flavour, No Fluoride & Artificial Colours - Pack of 3 (125g x 3)",
+      "available": true
+    },
+    {
+      "id": 7,
+      "title": "Jagat Devsutra Dr. Recommended Ayurvedic Herbal Fresh Mint Flavour Toothpaste Combo Pack Offer - 100% Natural Teeth Whitening Formula with No Fluoride & No Artificial Colours - Pack of 3 (125g X 3)",
+      "url": "https://amzn.in/d/51t2Euz",
+      "price": 265,
+      "image": "https://m.media-amazon.com/images/I/51tMk+FNHfL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Jagat Devsutra",
+      "description": "Jagat Devsutra Dr. Recommended Ayurvedic Herbal Fresh Mint Flavour Toothpaste Combo Pack Offer - 100% Natural Teeth Whitening Formula with No Fluoride & No Artificial Colours - Pack of 3 (125g X 3)",
+      "available": true
+    },
+    {
+      "id": 8,
+      "title": "Jagat Devsutra Dr. Recommended Ayurvedic Charcoal + Advance Toothpaste Combo Pack Offer - 100% Natural Teeth Whitening Formula with No Fluoride & No Artificial Colours - Pack of 4 (125g X 4)",
+      "url": "https://amzn.in/d/fxc0FW7",
+      "price": 364,
+      "image": "https://m.media-amazon.com/images/I/51wWpONsKzL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Jagat Devsutra",
+      "description": "Jagat Devsutra Dr. Recommended Ayurvedic Charcoal + Advance Toothpaste Combo Pack Offer - 100% Natural Teeth Whitening Formula with No Fluoride & No Artificial Colours - Pack of 4 (125g X 4)",
+      "available": true
+    },
+    {
+      "id": 9,
+      "title": "SPLAT Biomed CompleteCare Charcoal, Fluoride-free, Tripple charcoal whitening and Gum care Toothpaste - 100gms",
+      "url": "https://amzn.in/d/7dErTUX",
+      "price": null,
+      "image": "https://m.media-amazon.com/images/I/41K6rZjdcuL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Biomed",
+      "description": "SPLAT Biomed CompleteCare Charcoal, Fluoride-free, Tripple charcoal whitening and Gum care Toothpaste - 100gms",
+      "available": false
+    },
+    {
+      "id": 10,
+      "title": "BIOMED CompleteCare Superwhite, Fluoride-free, Gentle whitening and Enamel strength Toothpaste - 100gms (Pack of 2), White",
+      "url": "https://amzn.in/d/6E5dIZT",
+      "price": null,
+      "image": "https://m.media-amazon.com/images/I/41pf+AVwouL._SX300_SY300_QL70_FMwebp_.jpg",
+      "brand": "Biomed",
+      "description": "BIOMED CompleteCare Superwhite, Fluoride-free, Gentle whitening and Enamel strength Toothpaste - 100gms (Pack of 2), White",
+      "available": false
+    },
+    {
+      "id": 11,
+      "title": "Biomed CompleteCare Calcimax, Fluoride-free, Enamel restoration and cavity protection Toothpaste - 100gms",
+      "url": "https://amzn.in/d/0KIqgWa",
+      "price": 3041.95,
+      "image": "https://m.media-amazon.com/images/I/41eRUAvZOdL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Biomed",
+      "description": "Biomed CompleteCare Calcimax, Fluoride-free, Enamel restoration and cavity protection Toothpaste - 100gms",
+      "available": true
+    },
+    {
+      "id": 12,
+      "title": "Maharishi Ayurveda Ayurdent Classic Toothpaste|Unique Saliva Balancing Formula|For Toothache,Bleeding Gums,Sensitivity,Cavities,Plaque & Bad breath|Non Foaming,SLS & Fluoride Free|Pack of 1",
+      "url": "https://amzn.in/d/btQmlCu",
+      "price": 207,
+      "image": "https://m.media-amazon.com/images/I/51uyDFKx6ZL._SX679_.jpg",
+      "brand": "Ayurdent",
+      "description": "Maharishi Ayurveda Ayurdent Classic Toothpaste|Unique Saliva Balancing Formula|For Toothache,Bleeding Gums,Sensitivity,Cavities,Plaque & Bad breath|Non Foaming,SLS & Fluoride Free|Pack of 1",
+      "available": true
+    },
+    {
+      "id": 13,
+      "title": "DASHAN SANSKAR CHURNA (Unjha) 100 G",
+      "url": "https://amzn.in/d/4AJr5Tk",
+      "price": null,
+      "image": "https://m.media-amazon.com/images/I/21ADp+yuNDL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Darshan Sanskar",
+      "description": "DASHAN SANSKAR CHURNA (Unjha) 100 G",
+      "available": false
+    },
+    {
+      "id": 14,
+      "title": "Unjha Dashan Sanskar Churna-100 Gm",
+      "url": "https://amzn.in/d/27Ok5h9",
+      "price": null,
+      "image": "https://m.media-amazon.com/images/I/41gmhwiT+pL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Darshan Sanskar",
+      "description": "Unjha Dashan Sanskar Churna-100 Gm",
+      "available": false
+    },
+    {
+      "id": 15,
+      "title": "Dhanvantari Dashan Sanskar Churna - 80 Gm, (Model: AF95)",
+      "url": "https://amzn.in/d/750hXOk",
+      "price": 140,
+      "image": "https://m.media-amazon.com/images/I/41df3j4QFNL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Darshan Sanskar",
+      "description": "Dhanvantari Dashan Sanskar Churna - 80 Gm, (Model: AF95)",
+      "available": true
+    },
+    {
+      "id": 16,
+      "title": "Vicco Vajradanti Ayurvedic Toothpowder Powder -Oral Care, 100g",
+      "url": "https://amzn.in/d/3kIDG5p",
+      "price": null,
+      "image": "https://m.media-amazon.com/images/I/41tMIXiF-fL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Vicco",
+      "description": "Vicco Vajradanti Ayurvedic Toothpowder Powder -Oral Care, 100g",
+      "available": false
+    },
+    {
+      "id": 17,
+      "title": "Ayurvedic Natural Organic Neem Datun, manual Toothbrush Nim Tree Twigs Chew Sticks for Brushing Teeth Removes Bad Breath, Relieve Tooth Ache (9 inch)- for adults,Pack of 20 Pieces",
+      "url": "https://amzn.in/d/16gJ7IA",
+      "price": 60,
+      "image": "https://m.media-amazon.com/images/I/51T7YNijSBL._SX300_SY300_QL70_FMwebp_.jpg",
+      "brand": "Sunshine Enterprise",
+      "description": "Ayurvedic Natural Organic Neem Datun, manual Toothbrush Nim Tree Twigs Chew Sticks for Brushing Teeth Removes Bad Breath, Relieve Tooth Ache (9 inch)- for adults,Pack of 20 Pieces",
+      "available": true
+    }
+  ]
+}

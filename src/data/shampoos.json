@@ -1,0 +1,134 @@
+{
+  "shampoos": [
+    {
+      "id": 1,
+      "title": "Just Herbs 8 in 1 Root Nourishing Amla Neem Hair Fall Control Shampoo For Men & Women - Suitable For Oily Hair Scalp, Sulphate & Paraben Free 200 ml",
+      "url": "https://amzn.in/d/dHRsLtl",
+      "price": null,
+      "image": "https://m.media-amazon.com/images/I/51qPaHHezBL._SX522_.jpg",
+      "brand": "Just herbs",
+      "description": "Just Herbs 8 in 1 Root Nourishing Amla Neem Hair Fall Control Shampoo For Men & Women - Suitable For Oily Hair Scalp, Sulphate & Paraben Free 200 ml",
+      "available": false
+    },
+    {
+      "id": 2,
+      "title": "Just Herbs Castor and Black Onion Seed Sulfate Free Shampoo Reduce Hairfall,Hair Loss For Dry and Frizzy, Normal Hair Types Men & Women - 200ml",
+      "url": "https://amzn.in/d/gIX0iHj",
+      "price": 278,
+      "image": "https://m.media-amazon.com/images/I/31Ny0h+K9bL._SX342_SY445_QL70_FMwebp_.jpg",
+      "brand": "Just herbs",
+      "description": "Just Herbs Castor and Black Onion Seed Sulfate Free Shampoo Reduce Hairfall,Hair Loss For Dry and Frizzy, Normal Hair Types Men & Women - 200ml",
+      "available": true
+    },
+    {
+      "id": 3,
+      "title": "The Moms Co. Natural Protein Shampoo for Strong Hair With Hydrolyzed Silk & Wheat Proteins | Controls Hair Fall, Reduces Dryness & Frizz | Shampoo For Women & Men | Chemical & Sulphate Free - 200ml",
+      "url": "https://amzn.in/d/cGSrU4x",
+      "price": null,
+      "image": "https://m.media-amazon.com/images/I/31u+ScELb9L._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "The Moms Co",
+      "description": "The Moms Co. Natural Protein Shampoo for Strong Hair With Hydrolyzed Silk & Wheat Proteins | Controls Hair Fall, Reduces Dryness & Frizz | Shampoo For Women & Men | Chemical & Sulphate Free - 200ml",
+      "available": false
+    },
+    {
+      "id": 4,
+      "title": "Rustic Art Aloe Clary Sage Natural Shampoo | Hair Fall Control & Scalp Balance | Amino Acid, Vitamin E | Oily to Normal Hair Type | Sulphate & Paraben Free | 210g",
+      "url": "https://amzn.in/d/0GH075d",
+      "price": 335,
+      "image": "https://m.media-amazon.com/images/I/31Wlag-IEIL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Rustic Art",
+      "description": "TRustic Art Aloe Clary Sage Natural Shampoo | Hair Fall Control & Scalp Balance | Amino Acid, Vitamin E | Oily to Normal Hair Type | Sulphate & Paraben Free | 210g",
+      "available": true
+    },
+    {
+      "id": 5,
+      "title": "Shunyam All-Natural Shampoo Bar for Dry and Frizzy Hair - Sulphate Free, Natural, Eco-Friendly, Sustainable, Plastic Free - Hibiscus Punch, 70 gm",
+      "url": "https://amzn.in/d/cjaDlCj",
+      "price": 329,
+      "image": "https://m.media-amazon.com/images/I/61rkldymSYL._SX425_.jpg",
+      "brand": "Shunyam",
+      "description": "Shunyam All-Natural Shampoo Bar for Dry and Frizzy Hair - Sulphate Free, Natural, Eco-Friendly, Sustainable, Plastic Free - Hibiscus Punch, 70 gm",
+      "available": true
+    },
+    {
+      "id": 6,
+      "title": "Earth Rhythm Shikakai Shampoo Bar | Contains Shikakai, Curry Leaf, Reeta & Amla Extracts | Men & Women | Sulphate & Paraben Free| Natural- (Cardboard) - 80gm",
+      "url": "https://amzn.in/d/dNMBurq",
+      "price": 227,
+      "image": "https://m.media-amazon.com/images/I/51zk3HCnTuL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Earth Rhythm",
+      "description": "Earth Rhythm Shikakai Shampoo Bar | Contains Shikakai, Curry Leaf, Reeta & Amla Extracts | Men & Women | Sulphate & Paraben Free| Natural- (Cardboard) - 80 gm",
+      "available": true
+    },
+    {
+      "id": 7,
+      "title": "Rustic Art Neem Tulsi Shampoo Bar | Dandruff & Oil Control | Activated Charcoal & Eucalyptus | Sulfate Paraben Free | Natural Herbal Scalp Care | 75g",
+      "url": "https://amzn.in/d/26aWDzE",
+      "price": 325,
+      "image": "https://m.media-amazon.com/images/I/61zTCLdvzIL._SX425_.jpg",
+      "brand": "Rustic Art",
+      "description": "Rustic Art Neem Tulsi Shampoo Bar | Dandruff & Oil Control | Activated Charcoal & Eucalyptus | Sulfate Paraben Free | Natural Herbal Scalp Care | 75g",
+      "available": true
+    },
+    {
+      "id": 8,
+      "title": "Havintha Natural Hair Shampoo With Herbal Amla Reetha Shikakai And Methi Dana Powder For Men & Women, Totally Organic | Paraben And Sulphate Free Shampoo - 227gm (Pack of 1)",
+      "url": "https://amzn.in/d/fBuCLkT",
+      "price": 236,
+      "image": "https://m.media-amazon.com/images/I/71xZQTS5jAL._SX425_.jpg",
+      "brand": "Havintha",
+      "description": "Havintha Natural Hair Shampoo With Herbal Amla Reetha Shikakai And Methi Dana Powder For Men & Women, Totally Organic | Paraben And Sulphate Free Shampoo - 227gm (Pack of 1)",
+      "available": true
+    },
+    {
+      "id": 9,
+      "title": "HerbtoniQ Bhringraj Brahmi Shampoo Powder with Organic Ingredients Amla Shikakai Hibiscus and Many More | For Hair Fall Reduction, Dandruff Control, Helps Hair Growth | Unisex Product | 500 Gram",
+      "url": "https://amzn.in/d/9cmFarZ",
+      "price": 499,
+      "image": "https://m.media-amazon.com/images/I/51OY8tZo+4L._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Herbotoniq",
+      "description": "HerbtoniQ Bhringraj Brahmi Shampoo Powder with Organic Ingredients Amla Shikakai Hibiscus and Many More | For Hair Fall Reduction, Dandruff Control, Helps Hair Growth | Unisex Product | 500 Gram",
+      "available": true
+    },
+    {
+      "id": 10,
+      "title": "The Forest Herbs Natural Care From Nature Hair Shampoo 200G With Amla, Reetha, Shikakai, Bhringraj, Hibiscus, Neem & Methi For Hair Wash (Advanced Herbal Hair Growth Shampoo) Powder",
+      "url": "https://amzn.in/d/e45fEuz",
+      "price": 259,
+      "image": "https://m.media-amazon.com/images/I/81qvnKKt4YL._SX425_.jpg",
+      "brand": "Forest Herbs",
+      "description": "The Forest Herbs Natural Care From Nature Hair Shampoo 200G With Amla, Reetha, Shikakai, Bhringraj, Hibiscus, Neem & Methi For Hair Wash (Advanced Herbal Hair Growth Shampoo) Powder",
+      "available": true
+    },
+    {
+      "id": 11,
+      "title": "CARMEL ORGANICS Herbal Hair Cleanser Powder 340 Grams, Herbal Shampoo, Blend of Soapnut,Shikakai,Amla,Fenugreek & Bhringraj Powder, Nourishes the Scalp and Hair With Essential Nutrients | Natural, No Added Preservatives and Additives",
+      "url": "https://amzn.in/d/2YdG6Bg",
+      "price": 299,
+      "image": "https://m.media-amazon.com/images/I/81Ebw2VAmlL._SX425_.jpg",
+      "brand": "Carmel Organics",
+      "description": "CARMEL ORGANICS Herbal Hair Cleanser Powder 340 Grams, Herbal Shampoo, Blend of Soapnut,Shikakai,Amla,Fenugreek & Bhringraj Powder, Nourishes the Scalp and Hair With Essential Nutrients | Natural, No Added Preservatives and Additives",
+      "available": true
+    },
+    {
+      "id": 12,
+      "title": "Herbal Hair Growth Shampoo Powder for Control Hair Fall with Amla, Reetha, Shikakai, Bhringraj & Hibiscus Powder - Hair Pack & Cleanser - 100% Natural Healthy Hair - Men & Women (400 gm)",
+      "url": "https://amzn.in/d/0tocrpT",
+      "price": 499,
+      "image": "https://m.media-amazon.com/images/I/41LfSZVl6tL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Vedic herbs",
+      "description": "Herbal Hair Growth Shampoo Powder for Control Hair Fall with Amla, Reetha, Shikakai, Bhringraj & Hibiscus Powder - Hair Pack & Cleanser - 100% Natural Healthy Hair - Men & Women (400 gm)",
+      "available": true
+    },
+    {
+      "id": 13,
+      "title": "Nourico Natural Hair Shampoo Powder 200g | Amla Reetha Shikakai Fenugreek Herbal Cleanser | Mild Herbal Hair Wash for Healthy Scalp and Strong Hair | Chemical Free Shampoo for Men and Women All Hair Types",
+      "url": "https://amzn.in/d/dEuZRls",
+      "price": null,
+      "image": "https://m.media-amazon.com/images/I/41qI3B284fL._SY300_SX300_QL70_FMwebp_.jpg",
+      "brand": "Nourico",
+      "description": "Nourico Natural Hair Shampoo Powder 200g | Amla Reetha Shikakai Fenugreek Herbal Cleanser | Mild Herbal Hair Wash for Healthy Scalp and Strong Hair | Chemical Free Shampoo for Men and Women All Hair Types",
+      "available": false
+    }
+  ]
+}

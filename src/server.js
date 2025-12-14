@@ -22,6 +22,11 @@ app.use(express.json());
 // API routes
 app.use("/api/products", productRoutes);
 
+app.get("/ping", (req, res) => {
+  res.send("pong");
+});
+
+
 // Home route testing
 app.use("/", (req, res) => {
   res.send("|=| Welcome to the backend! |=|");

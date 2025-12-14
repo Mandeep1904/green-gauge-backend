@@ -5,7 +5,8 @@ import path from "path";
 const router = express.Router();
 
 // Base data directory
-const dataDir = path.resolve("src/data");
+// const dataDir = path.resolve("src/data");
+const dataDir = path.join(__dirname, "../data");
 
 // Single dynamic route for ALL categories
 // Examples:

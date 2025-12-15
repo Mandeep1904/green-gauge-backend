@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { chromium } from "playwright";
-import { scrapeAmazonWithPage } from "../services/scraper.js";
+import scrapeAmazonWithPage from "../services/scraper.js";
 import { fileURLToPath } from "url";
 
 // --------------------
@@ -35,7 +35,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // --------------------
 // MAIN UPDATER
 // --------------------
-export const updatePrices = async () => {
+const updatePrices = async () => {
   const now = Date.now();
   if (now - lastRun < MIN_INTERVAL) {
     console.log("|=| Skipped: updated recently |=|");
@@ -111,9 +111,7 @@ export const updatePrices = async () => {
 
         item.product.available = scraped.available;
 
-        item.product.price =
-          scraped.price !== null ? scraped.price : null;
-
+        item.product.price = scraped.price !== null ? scraped.price : null;
       } catch {
         item.attempts++;
         retryQueue.push(item);
@@ -141,3 +139,5 @@ if (isDirectRun) {
     console.log("|=| Price updater finished |=|");
   })();
 }
+
+export default updatePrices;

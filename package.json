@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.js",
+    "dev": "nodemon --ext js --ignore 'src/data/' src/server.js",
     "start": "node src/server.js",
     "price-update": "node src/jobs/priceUpdater.js"
   },
@@ -26,5 +26,14 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.11"
+  },
+  "nodemonConfig": {
+    "ext": "js",
+    "ignore": [
+      "src/data/**"
+    ],
+    "watch": [
+      "src/**/*.js"
+    ]
   }
 }

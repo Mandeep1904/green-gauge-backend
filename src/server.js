@@ -3,7 +3,7 @@ import cors from "cors";
 import env from "dotenv";
 
 import productRoutes from "./routes/products.routes.js";
-import { updatePrices } from "./jobs/priceUpdater.js";
+import updatePrices from "./jobs/priceUpdater.js";
 
 // -----------------------------------------------
 
@@ -19,26 +19,31 @@ app.use(express.json());
 // API routes
 app.use("/api/products", productRoutes);
 
-// Ping (Render / uptime check)
-app.get("/ping", (req, res) => {
-  res.send("pong");
-});
-
-// MANUAL / CRON-LIKE TRIGGER 
+// MANUAL / CRON-LIKE TRIGGER
 app.get("/api/cron/price-update", async (req, res) => {
-
   if (req.query.key !== process.env.CRON_SECRET) {
     return res.status(401).json({ error: "Unauthorized" });
   }
 
-  try {
-    console.log("|=| Manual price update triggered |=|");
-    await updatePrices();
-    res.json({ success: true });
-  } catch (err) {
-    console.error("|=| Price update failed |=|", err);
-    res.status(500).json({ success: false });
-  }
+  // Respond immediately to prevent timeout
+  res.json({
+    success: true,
+    message: "Price update started in background",
+  });
+
+  // Run the update in background (don't await)
+  updatePrices()
+    .then(() => {
+      console.log("|=| Background price update completed successfully |=|");
+    })
+    .catch((err) => {
+      console.error("|=| Background price update failed |=|", err);
+    });
+});
+
+// Ping (Render / uptime check)
+app.get("/ping", (req, res) => {
+  res.send("pong");
 });
 
 // Home route testing

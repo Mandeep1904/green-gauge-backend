@@ -23,9 +23,10 @@ const files = [
   "hairoils.json",
 ];
 
-const MAX_RETRIES = 3;
-const RETRY_DELAY = 5000;
-const BATCH_SIZE = 2; 
+const MAX_RETRIES = 2;
+const RETRY_DELAY = 3000;
+const BATCH_SIZE = 2;
+const PRODUCT_TIMEOUT = 45000; // 45 seconds per product (was 60s) // Process 5 products per browser instance
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

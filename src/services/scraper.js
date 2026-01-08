@@ -1,5 +1,24 @@
-const scrapeAmazonWithPage = async (page, url) => {
-  await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
+const scrapeAmazonWithPage = async (page, url, timeout = 45000) => {
+  try {
+    // Set page timeout with better error handling
+    await Promise.race([
+      page.goto(url, { waitUntil: "domcontentloaded", timeout }),
+      new Promise((_, reject) =>
+        setTimeout(
+          () => reject(new Error("Page load exceeded timeout")),
+          timeout
+        )
+      ),
+    ]);
+  } catch (e) {
+    console.warn("|=| Page load failed |=|:", url, e.message);
+    return {
+      title: null,
+      image: null,
+      price: null,
+      available: false,
+    };
+  }
 
   // ----------------------------
   // TITLE (always try)
@@ -50,11 +69,11 @@ const scrapeAmazonWithPage = async (page, url) => {
 
         if (!isNaN(parsed) && parsed > 0) {
           price = parsed;
-          break; // Found valid price, stop searching
+          break;
         }
       }
     } catch {
-      continue; // Try next selector
+      continue;
     }
   }
 
@@ -63,7 +82,6 @@ const scrapeAmazonWithPage = async (page, url) => {
   // ----------------------------
   let isAvailable = true;
 
-  // Method 1: Check specific availability sections
   const availabilitySelectors = [
     "#availability span",
     "#availabilityInsideBuyBox_feature_div span",
@@ -97,7 +115,6 @@ const scrapeAmazonWithPage = async (page, url) => {
     }
   }
 
-  // Method 2: Check if "Add to Cart" or "Buy Now" buttons exist
   if (isAvailable) {
     const hasAddToCart = await page
       .locator("#add-to-cart-button, #buy-now-button")
@@ -105,12 +122,10 @@ const scrapeAmazonWithPage = async (page, url) => {
       .catch(() => 0);
 
     if (hasAddToCart === 0) {
-      // No buy buttons = likely unavailable
       isAvailable = false;
     }
   }
 
-  // Method 3: If price is null but page looks available, mark as unavailable
   if (price === null && isAvailable) {
     isAvailable = false;
   }

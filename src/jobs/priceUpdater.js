@@ -25,6 +25,7 @@ const files = [
 
 const MAX_RETRIES = 3;
 const RETRY_DELAY = 5000;
+const BATCH_SIZE = 5; 
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -32,31 +33,53 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // MAIN UPDATER
 // --------------------
 const updatePrices = async () => {
-
-  const browser = await chromium.launch({
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
-
-  const context = await browser.newContext({
-    locale: "en-IN",
-    userAgent:
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36",
-  });
-
-  const page = await context.newPage();
-
   for (const file of files) {
     const filePath = path.join(dataDir, file);
     const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
-    const retryQueue = [];
-
-    // =========================
-    // FIRST PASS
-    // =========================
+    // Flatten all products with their category reference
+    const allProducts = [];
     for (const category in data) {
       for (const product of data[category]) {
+        allProducts.push({ product, category });
+      }
+    }
+
+    console.log(`|=| Starting ${file} with ${allProducts.length} products |=|`);
+
+    // Process in batches
+    for (let i = 0; i < allProducts.length; i += BATCH_SIZE) {
+      const batch = allProducts.slice(i, i + BATCH_SIZE);
+      const batchNum = Math.floor(i / BATCH_SIZE) + 1;
+      const totalBatches = Math.ceil(allProducts.length / BATCH_SIZE);
+
+      console.log(`|=| Processing batch ${batchNum}/${totalBatches} for ${file} |=|`);
+
+      // Create a new browser for each batch
+      const browser = await chromium.launch({
+        headless: true,
+        args: [
+          "--no-sandbox",
+          "--disable-setuid-sandbox",
+          "--disable-dev-shm-usage",
+          "--disable-gpu",
+          "--disable-extensions",
+        ],
+      });
+
+      const context = await browser.newContext({
+        locale: "en-IN",
+        userAgent:
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36",
+      });
+
+      const page = await context.newPage();
+      const retryQueue = [];
+
+      // =========================
+      // FIRST PASS - BATCH
+      // =========================
+      for (const { product, category } of batch) {
         try {
           const scraped = await scrapeAmazonWithPage(page, product.url);
 
@@ -74,45 +97,60 @@ const updatePrices = async () => {
           }
 
           await sleep(3500 + Math.random() * 2000);
-        } catch {
-          console.warn("|=| Failed (queued) |=| :", product.url);
+        } catch (e) {
+          console.warn("|=| Failed (queued) |=| :", product.url, e.message);
           retryQueue.push({ product, attempts: 1 });
         }
       }
-    }
 
-    // =========================
-    // RETRY PASSES
-    // =========================
-    while (retryQueue.length > 0) {
-      const item = retryQueue.shift();
+      // =========================
+      // RETRY PASSES - BATCH
+      // =========================
+      while (retryQueue.length > 0) {
+        const item = retryQueue.shift();
 
-      if (item.attempts >= MAX_RETRIES) {
-        console.error("|=| Permanently failed |=| :", item.product.url);
-        continue;
+        if (item.attempts >= MAX_RETRIES) {
+          console.error("|=| Permanently failed |=| :", item.product.url);
+          continue;
+        }
+
+        try {
+          await sleep(RETRY_DELAY);
+          const scraped = await scrapeAmazonWithPage(page, item.product.url);
+
+          if (scraped.title) item.product.title = scraped.title;
+          if (scraped.image) item.product.image = scraped.image;
+
+          item.product.available = scraped.available;
+
+          item.product.price = scraped.price !== null ? scraped.price : null;
+          console.log("|=| Retry succeeded |=| :", item.product.url);
+        } catch (e) {
+          item.attempts++;
+          retryQueue.push(item);
+          console.warn(
+            `|=| Retry failed, attempt ${item.attempts}/${MAX_RETRIES} |=| :`,
+            item.product.url
+          );
+        }
       }
 
-      try {
-        await sleep(RETRY_DELAY);
-        const scraped = await scrapeAmazonWithPage(page, item.product.url);
+      // Close browser after batch (releases memory)
+      await browser.close();
 
-        if (scraped.title) item.product.title = scraped.title;
-        if (scraped.image) item.product.image = scraped.image;
+      // Save progress after each batch
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+      console.log(`|=| Batch ${batchNum}/${totalBatches} complete, file saved |=|`);
 
-        item.product.available = scraped.available;
-
-        item.product.price = scraped.price !== null ? scraped.price : null;
-      } catch {
-        item.attempts++;
-        retryQueue.push(item);
+      // Wait between batches to avoid rate limiting
+      if (i + BATCH_SIZE < allProducts.length) {
+        console.log("|=| Waiting 5 seconds before next batch |=|");
+        await sleep(5000);
       }
     }
 
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
     console.log(`|=| ${file} fully processed |=|`);
   }
-
-  await browser.close();
 };
 
 // =========================

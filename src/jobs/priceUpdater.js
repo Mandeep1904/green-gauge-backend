@@ -26,22 +26,12 @@ const files = [
 const MAX_RETRIES = 3;
 const RETRY_DELAY = 5000;
 
-// Anti-spam guard (6 hours)
-let lastRun = 0;
-const MIN_INTERVAL = 1000 * 60 * 60 * 6;
-
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // --------------------
 // MAIN UPDATER
 // --------------------
 const updatePrices = async () => {
-  const now = Date.now();
-  if (now - lastRun < MIN_INTERVAL) {
-    console.log("|=| Skipped: updated recently |=|");
-    return;
-  }
-  lastRun = now;
 
   const browser = await chromium.launch({
     headless: true,

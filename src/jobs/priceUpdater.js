@@ -82,7 +82,7 @@ const updatePrices = async () => {
       // =========================
       for (const { product, category } of batch) {
         try {
-          const scraped = await scrapeAmazonWithPage(page, product.url);
+          const scraped = await scrapeAmazonWithPage(page, product.url, PRODUCT_TIMEOUT);
 
           if (scraped.title) product.title = scraped.title;
           if (scraped.image) product.image = scraped.image;
@@ -117,7 +117,7 @@ const updatePrices = async () => {
 
         try {
           await sleep(RETRY_DELAY);
-          const scraped = await scrapeAmazonWithPage(page, item.product.url);
+          const scraped = await scrapeAmazonWithPage(page, item.product.url, PRODUCT_TIMEOUT);
 
           if (scraped.title) item.product.title = scraped.title;
           if (scraped.image) item.product.image = scraped.image;

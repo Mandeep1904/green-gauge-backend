@@ -25,7 +25,7 @@ const files = [
 
 const MAX_RETRIES = 3;
 const RETRY_DELAY = 5000;
-const BATCH_SIZE = 5; 
+const BATCH_SIZE = 2; 
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -135,7 +135,7 @@ const updatePrices = async () => {
         }
       }
 
-      // Close browser after batch (releases memory)
+      // Close browser after batch AND all retries are complete (releases memory)
       await browser.close();
 
       // Save progress after each batch
